@@ -6,6 +6,8 @@ theme = "good-to-go"
 
 [params]
     description = "My site description"
+    author = "buttdev.kr"
+    authorImage = "/images/buttdev.jpg"
 
 [[menu.main]]
     name = "About"
