@@ -46,11 +46,25 @@ paginate = 4
   name = "Contact"
   url = "/contact"
 
+#[[menu.footer]]
+#  name = "Privacy"
+#  url = "/privacy"
+
+# This allows content can use html grammar in it.
 [markup]
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true
 
-#[[menu.footer]]
-#  name = "Privacy"
-#  url = "/privacy"
+[related]
+    threshold = 0 
+    includeNewer = true
+    toLower = false
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
