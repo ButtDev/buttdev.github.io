@@ -4,6 +4,8 @@ title = "DroidBook"
 
 theme = "good-to-go"
 
+paginate = 4
+
 [params]
     description = "My site description"
     author = "buttdev.kr"
@@ -16,6 +18,10 @@ theme = "good-to-go"
 [[menu.main]]
     name = "Blog"
     url = "/blog"
+
+[[menu.main]]
+    name = "Categories"
+    url = "/categories"
 
 [[menu.social]]
     name = "GitHub"
@@ -37,5 +43,14 @@ theme = "good-to-go"
   url = "/about"
 
 [[menu.footer]]
-  name = "Privacy"
-  url = "/privacy"
+  name = "Contact"
+  url = "/contact"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+#[[menu.footer]]
+#  name = "Privacy"
+#  url = "/privacy"
