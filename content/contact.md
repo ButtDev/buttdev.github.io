@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 date: 2021-08-13T15:22:02+09:00
-heroimage: /images/contact.jpg
+heroimage: images/contact.jpg
 layout: contact
 buttons:
 - name: Phone

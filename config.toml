@@ -9,7 +9,7 @@ paginate = 4
 [params]
     description = "My site description"
     author = "buttdev.kr"
-    authorImage = "/images/buttdev.jpg"
+    authorImage = "images/buttdev.jpg"
 
 [[menu.main]]
     name = "About"
