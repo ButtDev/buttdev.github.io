@@ -1,0 +1,9 @@
+{{- if or .Params.toc (and (gt .WordCount 400 ) (ne .Params.toc "false")) }}
+<aside>
+<details>
+  <summary>Table of Contents</summary>
+  <!--{{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}-->
+  {{ .TableOfContents }}
+</details>
+</aside>
+{{ end }}

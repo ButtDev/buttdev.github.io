@@ -15,6 +15,8 @@
                 {{ $firstChild := index .Pages 0 }}
                 {{ with $firstChild.Params.images }}
                 <img src="{{ index . 0 }}" alt="">
+                {{ else }}
+                <img src="/images/author.jpg" alt="">
                 {{ end }}
               </figure>
             </a>

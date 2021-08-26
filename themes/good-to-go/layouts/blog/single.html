@@ -22,7 +22,7 @@
             </div>
             <div class="column">
               {{ range $idx, $category := .Params.categories }}
-              {{- if ne $idx 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize}}">{{ $category }}</a>
+              {{- if ne $idx 0 }}, {{ end }}<a href="{{ "/categories/" | relURL }}{{ $category | urlize}}">{{ $category }}</a>
               {{- end }}
             </div>
           </div>
@@ -36,6 +36,8 @@
         </figure>
         {{ end }}
         <div class="content">
+          {{ partial "toc.html" . }}
+          <hr>
           {{ .Content }}
         </div>
       </div>

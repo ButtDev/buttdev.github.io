@@ -4,12 +4,17 @@ title = "ButtDev"
 
 theme = "good-to-go"
 
-paginate = 4
+paginate = 8
 
 [params]
     description = "My site description"
     author = "buttdev.kr"
-    authorImage = "images/buttdev.jpg"
+    authorImage = "/images/buttdev.jpg"
+
+[taxonomies]
+    category = 'categories'
+    series = 'series'
+    tag = 'tags'
 
 [[menu.main]]
     name = "About"
@@ -68,3 +73,6 @@ paginate = 4
     [[related.indices]]
         name = "date"
         weight = 10
+
+[permalinks]
+    blog = "/blog/:filename/"

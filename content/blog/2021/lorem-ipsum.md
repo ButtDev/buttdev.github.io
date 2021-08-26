@@ -2,7 +2,8 @@
 title: "Lorem Ipsum"
 date: 2021-08-04T13:39:24+09:00
 description: "This is a short description of the page"
-images: ["images/blog/2021/08/fields.jpg"] 
+images: ["/images/blog/2021/08/fields.jpg"] 
+toc: true
 categories:
     - Web development
     - Blogging

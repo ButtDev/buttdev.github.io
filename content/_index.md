@@ -7,7 +7,7 @@ date: 2021-08-03T17:31:49+09:00
 .main-image {
     background-position: center;
     background-size: cover;
-    background-image: url(images/blog/2021/08/water.jpg);
+    background-image: url(/images/blog/2021/08/water.jpg);
 }
 </style>
 
