@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://buttdev.github.io/"
 languageCode = "en-us"
-title = "DroidBook"
+title = "ButtDev"
 
 theme = "good-to-go"
 
