@@ -27,6 +27,9 @@
             </div>
           </div>
         </div>
+        {{ if .Params.draft }}
+        <span><b>DRAFT {{ .WordCount }} WORDS</b></span>
+        {{ end }}
         {{ with .Params.images }}
         <figure class="title-image">
           <img src="{{ index . 0 }}" alt="">
