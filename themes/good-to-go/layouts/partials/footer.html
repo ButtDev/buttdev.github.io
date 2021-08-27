@@ -1,11 +1,19 @@
 <footer class="footer">
-    <div class="container">
-        <div class="columns has-text-centered">
-            {{ range .Site.Menus.footer }}
-            <div class="column is-narrow">
-                <a href="{{ .URL }}" class="">{{ .Name }}</a>
-            </div>
-            {{ end }}
-        </div>
+  <div class="container">
+    <div class="columns has-text-centered">
+      {{ range .Site.Menus.main }}
+      <div class="column is-narrow">
+        <a href="{{ .URL }}" class="">{{ .Name }}</a>
+      </div>
+      {{ end }}
+    </div>
+    <div class="poweredby">
+      <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
+      <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/ButtDev/buttdev.github.io/tree/master/themes/good-to-go" rel="noopener" target="_blank">good-to-go</a>
+      </span>  
+    </div>
     </div>
 </footer>

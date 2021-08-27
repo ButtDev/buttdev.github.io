@@ -3,8 +3,4 @@ title: "Blog"
 date: 2021-08-04T13:36:04+09:00
 ---
 
-This is my blog where I *really* like to teach you all the things.
-
-I hope you enjoy reading as much as I **love** writing!
-
 <hr>

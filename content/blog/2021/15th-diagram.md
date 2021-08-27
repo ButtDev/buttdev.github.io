@@ -1,11 +1,17 @@
 ---
 title: "15th Diagram"
 date: 2021-08-27T09:00:55+09:00
+images: ["/images/blog/2021/08/fields.jpg"]
+tags: ["diagram", "test"]
+categories:
+- Blogging
 ---
 
 {{< plantuml id="eg" >}}
 Alice -> Bob: test
 {{< /plantuml >}}
+
+<!--more-->
 
 
 <div class="mermaid">

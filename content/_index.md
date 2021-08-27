@@ -7,11 +7,11 @@ date: 2021-08-03T17:31:49+09:00
 .main-image {
     background-position: center;
     background-size: cover;
-    background-image: url(/images/blog/2021/08/water.jpg);
+    background-image: url(/images/home.jpg);
 }
 </style>
 
-<section class="hero is-large is-dark main-image">
+<section class="hero is-small is-dark main-image">
     <div class="hero-body">
         <div class="container has-text-centered">
             <h2 class="title is-1">Are you ready?</h2>
@@ -19,9 +19,11 @@ date: 2021-08-03T17:31:49+09:00
     </div>
 </section>
 
+<!--
 {{< section >}}
 ## Some title 3 {align=center}
 {{< youtube U4UtpDaw8wY >}}
 {{< /section >}}
+-->
 
 {{< blogposts count=6 >}}

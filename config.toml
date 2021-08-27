@@ -4,7 +4,7 @@ title = "ButtDev"
 
 theme = "good-to-go"
 
-paginate = 8
+paginate = 4
 
 [params]
     description = "My site description"
@@ -15,10 +15,6 @@ paginate = 8
     category = 'categories'
     series = 'series'
     tag = 'tags'
-
-[[menu.main]]
-    name = "About"
-    url = "/about"
 
 [[menu.main]]
     name = "Blog"
@@ -43,13 +39,10 @@ paginate = 8
 #    url = "https://twitter.com/buttdev
 #    pre = "<i class='fab fa-twitter'></i>"
 
-[[menu.footer]]
-  name = "About"
-  url = "/about"
-
-[[menu.footer]]
-  name = "Contact"
-  url = "/contact"
+# menu.main replaces by footer
+#[[menu.footer]]
+#  name = "Contact"
+#  url = "/contact"
 
 #[[menu.footer]]
 #  name = "Privacy"
@@ -66,7 +59,7 @@ paginate = 8
     theme = "default"
     #Set url to plantuml server
     #default is http://www.plantuml.com/plantuml/svg/
-    svg_image_url = "https://www.plantuml.com/plantuml/svg/"
+    server = "https://www.plantuml.com/plantuml/svg/"
 
 
 [related]

@@ -36,3 +36,7 @@ main {
 .card {
         height: 100%;
 }
+
+.poweredby {
+        text-align:center;
+}
