@@ -61,6 +61,14 @@ paginate = 8
         [markup.goldmark.renderer]
             unsafe = true
 
+[params.plantuml]
+    enable = true
+    theme = "default"
+    #Set url to plantuml server
+    #default is http://www.plantuml.com/plantuml/svg/
+    svg_image_url = "https://www.plantuml.com/plantuml/svg/"
+
+
 [related]
     threshold = 0 
     includeNewer = true
