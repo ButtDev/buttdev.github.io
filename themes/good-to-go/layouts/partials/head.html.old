@@ -1,0 +1,61 @@
+<head>
+  <!--<base href="{{ .Site.BaseURL }}">-->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+    <base href="{{ .Permalink }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{{ if not .IsHome }}{{ with .Title }}{{ . }} | {{ end }}{{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ if not (in (string .Site.BaseURL) "localhost") }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!--
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {color: #666666; font-family:'Nanum Gothic';font-size:12px;line-height:20px;}
+</style>
+-->
+{{- /* Styles */}}
+{{- $theme_vars := (resources.Get "css/core/theme-vars.css") }}
+{{- $reset := (resources.Get "css/core/reset.css") }}
+{{- $media := (resources.Get "css/core/zmedia.css") }}
+{{- $common := (resources.Match "css/common/*.css") | resources.Concat "assets/css/common.css" }}
+
+{{- /* include `an-old-hope` if hljs is on */}}
+{{- $isHLJSdisabled := (.Site.Params.assets.disableHLJS | default false) }}
+{{- $hljs := (cond ($isHLJSdisabled) (" " | resources.FromString "assets/css/hljs-blank.css") (resources.Get "css/hljs/an-old-hope.min.css")) }}
+
+{{- /* order is important */}}
+{{- $core := (slice $theme_vars $reset $common $hljs $media) | resources.Concat "assets/css/core.css" }}
+{{- $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" }}
+
+{{- /* bundle all required css */}}
+{{- /* Add extended css after theme style */ -}}
+{{- $stylesheet := (slice $core $extended) | resources.Concat "assets/css/stylesheet.css" | minify }}
+
+{{- /* Search */}}
+{{- if (eq .Layout `search`) -}}
+<link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+{{- $fastsearch := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" .Site.Params.fuseOpts)) }}
+{{- $fusejs := resources.Get "js/fuse.js" }}
+{{- if not .Site.Params.assets.disableFingerprinting }}
+{{- $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" | minify | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
+{{- else }}
+{{- $search := (slice $fusejs $fastsearch ) | resources.Concat "assets/js/search.js" | minify }}
+<script defer crossorigin="anonymous" src="{{ $search.RelPermalink }}"></script>
+{{- end }}
+{{- end -}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+
