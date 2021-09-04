@@ -1,0 +1,216 @@
+<!doctype html><html lang=en-us><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.2/css/all.css integrity=sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr crossorigin=anonymous>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+<title>15th Diagram | ButtDev</title>
+<meta name=keywords content="diagram,test">
+<meta name=description content="
+
+">
+<link rel=canonical href=https://buttdev.github.io/blog/15th-diagram/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.00d5d4fc479b1575183ee8d86b4fb372ba9d9b1904e96fa8e4c40ff7debe2b94.css integrity="sha256-ANXU/EebFXUYPujYa0+zcrqdmxkE6W+o5MQP996+K5Q=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://buttdev.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://buttdev.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://buttdev.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://buttdev.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://buttdev.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+<meta name=generator content="Hugo 0.87.0">
+<body><header>
+<nav class=navbar role=navigation>
+<div class=container>
+<div class=navbar-brand>
+<a href=https://buttdev.github.io/ title=home class=navbar-item>
+<span class=logo><h1>ButtDev</h1></span>
+</a>
+<a href=https://github.com/buttdev class="navbar-item is-hidden-desktop" title=GitHub><span class=icon><i class="fab fa-github"></i></span></a>
+<a role=button class=navbar-burger aria-label=menu aria-expanded=false>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+</div>
+<div class=navbar-menu>
+<div class=navbar-start>
+<a href=/blog class=navbar-item>Blog</a>
+<a href=/categories class=navbar-item>Categories</a>
+<a href=/search class=navbar-item>Search</a>
+<a href=/tags class=navbar-item>Tags</a>
+</div>
+<div class=navbar-end>
+<a href=https://github.com/buttdev class="navbar-item is-hidden-touch" title=GitHub><span class=icon><i class="fab fa-github"></i></span></a>
+</div>
+</div>
+</div>
+</nav>
+<script>$(document).ready(function(){$(".navbar-burger").click(function(){$(".navbar-burger").toggleClass("is-active"),$(".navbar-menu").toggleClass("is-active")})})</script>
+</header>
+<main>
+<section class=section>
+<article>
+<div class="columns is-centered">
+<div class="column max-800px">
+<h1 class="title is-1">15th Diagram</h1>
+<div class="title subtitle heading is-6">
+<div class="columns is-vcentered">
+<div class=column>
+<div class="columns is-vcentered is-mobile">
+<div class="column is-narrow">
+<img src=/images/buttdev.jpg class=author-image>
+</div>
+<div class=column>
+<p>buttdev.kr</p>
+<p><time>August 27 09:00, 2021</time> |
+1 minute </p>
+</div>
+</div>
+</div>
+<div class="column tags is-pulled-right">
+<a class="tag is-primary is-radiusless" href=/categories/blogging>Blogging</a>
+</div>
+</div>
+</div>
+<figure class=title-image>
+<img src=/images/blog/2021/08/fields.jpg alt>
+</figure>
+<div class=content>
+<hr>
+<img id=plantuml-eg>
+<script src=/js/rawdeflate.js></script>
+<script>function encode64(a){r="";for(i=0;i<a.length;i+=3)i+2==a.length?r+=append3bytes(a.charCodeAt(i),a.charCodeAt(i+1),0):i+1==a.length?r+=append3bytes(a.charCodeAt(i),0,0):r+=append3bytes(a.charCodeAt(i),a.charCodeAt(i+1),a.charCodeAt(i+2));return r}function append3bytes(a,b,c){return c1=a>>2,c2=(a&3)<<4|b>>4,c3=(b&15)<<2|c>>6,c4=c&63,r="",r+=encode6bit(c1&63),r+=encode6bit(c2&63),r+=encode6bit(c3&63),r+=encode6bit(c4&63),r}function encode6bit(a){return a<10?String.fromCharCode(48+a):(a-=10,a<26)?String.fromCharCode(65+a):(a-=26,a<26)?String.fromCharCode(97+a):(a-=26,a==0)?'-':a==1?'_':'?'}var deflater=window.SharedWorker&&new SharedWorker('/js/rawdeflate.js');deflater?(deflater.port.addEventListener('message',done_deflating,!1),deflater.port.start()):window.Worker&&(deflater=new Worker('/js/rawdeflate.js'),deflater.onmessage=done_deflating);function done_deflating(a){const b=document.getElementById("plantuml-eg");b.src="https://www.plantuml.com/plantuml/svg/"+encode64(a.data)}function compress(a){a=unescape(encodeURIComponent(a)),deflater?deflater.port&&deflater.port.postMessage?deflater.port.postMessage(a):deflater.postMessage(a):setTimeout(function(){done_deflating({data:deflate(a)})},100)}compress("\nAlice -\u003e Bob: test\n")</script>
+<div class=mermaid>
+gantt
+dateFormat YYYY-MM-DD
+title Adding GANTT diagram functionality to mermaid
+section A section
+Completed task :done, des1, 2014-01-06,2014-01-08
+Active task :active, des2, 2014-01-09, 3d
+Future task : des3, after des2, 5d
+Future task2 : des4, after des3, 5d
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison :crit, done, after des1, 2d
+Create tests for parser :crit, active, 3d
+Future task in critical line :crit, 5d
+Create tests for renderer :2d
+Add to mermaid :1d
+</div>
+<div class=mermaid>
+sequenceDiagram
+participant Alice
+participant Bob
+Alice->>John: Hello John, how are you?
+loop Healthcheck
+John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts <br>prevail!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
+</div>
+<div class=mermaid>
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<section class=section>
+<div class="columns is-centered">
+<div class="column max-800px">
+<div class="columns is-mobile">
+<div class="column has-text-left">
+<p>Previous post</p>
+<a href=https://buttdev.github.io/blog/14th-lorem/>14th Lorem</a>
+</div>
+<div class="column has-text-right">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class=section>
+<div class="columns is-centered">
+<div class="column max-800px">
+<div class=content>
+<h2>Related content</h2>
+</div>
+<div class=columns>
+<div class="column is-one-third">
+<div class=card>
+<div class=card-content>
+<a class="title is-5" href=https://buttdev.github.io/blog/14th-lorem/>14th Lorem</a>
+<span class=heading><time>August 26, 2021</time></span>
+</div>
+</div>
+</div>
+<div class="column is-one-third">
+<div class=card>
+<div class=card-content>
+<a class="title is-5" href=https://buttdev.github.io/blog/13th-post/>13th Post</a>
+<span class=heading><time>August 26, 2021</time></span>
+</div>
+</div>
+</div>
+<div class="column is-one-third">
+<div class=card>
+<div class=card-content>
+<a class="title is-5" href=https://buttdev.github.io/blog/lorem-ipsum/>Lorem Ipsum</a>
+<span class=heading><time>August 4, 2021</time></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main><footer class=footer style=background-color:#fff>
+<div>
+<div class="columns has-text-centered">
+<div class="column is-narrow">
+<a href=/blog>Blog</a>
+</div>
+<div class="column is-narrow">
+<a href=/categories>Categories</a>
+</div>
+<div class="column is-narrow">
+<a href=/search>Search</a>
+</div>
+<div class="column is-narrow">
+<a href=/tags>Tags</a>
+</div>
+</div>
+<div class=poweredby>
+<span>&copy; 2021 <a href=https://buttdev.github.io/>ButtDev</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/ButtDev/buttdev.github.io/tree/master/themes/good-to-go rel=noopener target=_blank>good-to-go</a>
+</span>
+</div>
+</div>
+</footer>
+</body>
+</html>

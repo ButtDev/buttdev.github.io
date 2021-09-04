@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on ButtDev</title><link>https://buttdev.github.io/blog/</link><description>Recent content in Blog on ButtDev</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Aug 2021 13:36:04 +0900</lastBuildDate><atom:link href="https://buttdev.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>15th Diagram</title><link>https://buttdev.github.io/blog/15th-diagram/</link><pubDate>Fri, 27 Aug 2021 09:00:55 +0900</pubDate><guid>https://buttdev.github.io/blog/15th-diagram/</guid><description>&lt;img id="plantuml-eg"/>
+&lt;script src="https://buttdev.github.io/js/rawdeflate.js">&lt;/script>
+&lt;script>
+function encode64(data) {
+r = "";
+for (i=0; i&lt;data.length; i+=3) {
+if (i+2==data.length) {
+r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
+} else if (i+1==data.length) {
+r += append3bytes(data.charCodeAt(i), 0, 0);
+} else {
+r += append3bytes(data.charCodeAt(i), data.charCodeAt(i+1),
+data.charCodeAt(i+2));
+}
+}
+return r;
+}
+function append3bytes(b1, b2, b3) {
+c1 = b1 >> 2;
+c2 = ((b1 &amp; 0x3) &lt;&lt; 4) | (b2 >> 4);
+c3 = ((b2 &amp; 0xF) &lt;&lt; 2) | (b3 >> 6);
+c4 = b3 &amp; 0x3F;
+r = "";
+r += encode6bit(c1 &amp; 0x3F);
+r += encode6bit(c2 &amp; 0x3F);
+r += encode6bit(c3 &amp; 0x3F);
+r += encode6bit(c4 &amp; 0x3F);
+return r;
+}
+function encode6bit(b) {
+if (b &lt; 10) {
+return String.fromCharCode(48 + b);
+}
+b -= 10;
+if (b &lt; 26) {
+return String.fromCharCode(65 + b);
+}
+b -= 26;
+if (b &lt; 26) {
+return String.fromCharCode(97 + b);
+}
+b -= 26;
+if (b == 0) {
+return '-';
+}
+if (b == 1) {
+return '_';
+}
+return '?';
+}
+var deflater = window.SharedWorker &amp;&amp; new SharedWorker('/js/rawdeflate.js');
+if (deflater) {
+deflater.port.addEventListener('message', done_deflating, false);
+deflater.port.start();
+} else if (window.Worker) {
+deflater = new Worker('/js/rawdeflate.js');
+deflater.onmessage = done_deflating;
+}
+function done_deflating(e) {
+const img = document.getElementById("plantuml-eg");
+img.src = "https://www.plantuml.com/plantuml/svg/"+encode64(e.data);
+}
+function compress(s) {
+s = unescape(encodeURIComponent(s));
+if (deflater) {
+if (deflater.port &amp;&amp; deflater.port.postMessage) {
+deflater.port.postMessage(s);
+} else {
+deflater.postMessage(s);
+}
+} else {
+setTimeout(function() {
+done_deflating({ data: deflate(s) });
+}, 100);
+}
+}
+compress("\nAlice -\u003e Bob: test\n")
+&lt;/script></description></item><item><title>14th Lorem</title><link>https://buttdev.github.io/blog/14th-lorem/</link><pubDate>Thu, 26 Aug 2021 17:54:33 +0900</pubDate><guid>https://buttdev.github.io/blog/14th-lorem/</guid><description>&lt;h1 id="lorem-ipsum">Lorem ipsum&lt;/h1>
+&lt;p>In &lt;a href="https://www.wikiwand.com/en/Publishing">publishing&lt;/a> and &lt;a href="https://www.wikiwand.com/en/Graphic_design">graphic design&lt;/a>, &lt;strong>lorem ipsum&lt;/strong> (derived from Latin &lt;em>dolorem ipsum&lt;/em>, translated as &amp;ldquo;pain itself&amp;rdquo;) is a &lt;a href="https://www.wikiwand.com/en/Filler_text">filler text&lt;/a> commonly used to demonstrate the graphic elements of a document or visual presentation. &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p></description></item><item><title>13th Post</title><link>https://buttdev.github.io/blog/13th-post/</link><pubDate>Thu, 26 Aug 2021 16:35:08 +0900</pubDate><guid>https://buttdev.github.io/blog/13th-post/</guid><description>series #2 2
+series 2.1 2.1
+series #2-2 2-2
+series #2-3 2-3</description></item><item><title>11th Content ABCDEFGHIJKLMNOPQRSTU VWXYZ</title><link>https://buttdev.github.io/blog/11th-content/</link><pubDate>Tue, 17 Aug 2021 16:02:01 +0900</pubDate><guid>https://buttdev.github.io/blog/11th-content/</guid><description>This is my blog where I really like to teach you all the things.
+I hope you enjoy reading as much as I love writing!</description></item><item><title>Lorem Ipsum</title><link>https://buttdev.github.io/blog/lorem-ipsum/</link><pubDate>Wed, 04 Aug 2021 13:39:24 +0900</pubDate><guid>https://buttdev.github.io/blog/lorem-ipsum/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur&amp;hellip;&lt;/p>
+&lt;h2 id="what-is-lorem-ipsum">What is Lorem Ipsum?&lt;/h2>
+&lt;p>In mollis cursus ligula, et venenatis neque maximus ut&amp;hellip;&lt;/p>
+&lt;p>Vivamus ut tincidunt urna. Nam eu mollis dolor&amp;hellip;&lt;/p></description></item><item><title>My First Post</title><link>https://buttdev.github.io/blog/my-first-post/</link><pubDate>Tue, 03 Aug 2021 17:47:29 +0900</pubDate><guid>https://buttdev.github.io/blog/my-first-post/</guid><description>H1 level title This is a paragraph.
+This another paragraph with emphasis and strong emphasis.
+H2 level title H3 level title This is a hyperlink
+I like lists because they are:
+fun easy, and fast. Lists can also be ordered:
+First element Second element with an unordered sublist And you can add tables:
+Column 1 Column 2 Column 3 I like tables This is content</description></item></channel></rss>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>diagram on ButtDev</title><link>https://buttdev.github.io/tags/diagram/</link><description>Recent content in diagram on ButtDev</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 27 Aug 2021 09:00:55 +0900</lastBuildDate><atom:link href="https://buttdev.github.io/tags/diagram/index.xml" rel="self" type="application/rss+xml"/><item><title>15th Diagram</title><link>https://buttdev.github.io/blog/15th-diagram/</link><pubDate>Fri, 27 Aug 2021 09:00:55 +0900</pubDate><guid>https://buttdev.github.io/blog/15th-diagram/</guid><description>&lt;img id="plantuml-eg"/>
+&lt;script src="https://buttdev.github.io/js/rawdeflate.js">&lt;/script>
+&lt;script>
+function encode64(data) {
+r = "";
+for (i=0; i&lt;data.length; i+=3) {
+if (i+2==data.length) {
+r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
+} else if (i+1==data.length) {
+r += append3bytes(data.charCodeAt(i), 0, 0);
+} else {
+r += append3bytes(data.charCodeAt(i), data.charCodeAt(i+1),
+data.charCodeAt(i+2));
+}
+}
+return r;
+}
+function append3bytes(b1, b2, b3) {
+c1 = b1 >> 2;
+c2 = ((b1 &amp; 0x3) &lt;&lt; 4) | (b2 >> 4);
+c3 = ((b2 &amp; 0xF) &lt;&lt; 2) | (b3 >> 6);
+c4 = b3 &amp; 0x3F;
+r = "";
+r += encode6bit(c1 &amp; 0x3F);
+r += encode6bit(c2 &amp; 0x3F);
+r += encode6bit(c3 &amp; 0x3F);
+r += encode6bit(c4 &amp; 0x3F);
+return r;
+}
+function encode6bit(b) {
+if (b &lt; 10) {
+return String.fromCharCode(48 + b);
+}
+b -= 10;
+if (b &lt; 26) {
+return String.fromCharCode(65 + b);
+}
+b -= 26;
+if (b &lt; 26) {
+return String.fromCharCode(97 + b);
+}
+b -= 26;
+if (b == 0) {
+return '-';
+}
+if (b == 1) {
+return '_';
+}
+return '?';
+}
+var deflater = window.SharedWorker &amp;&amp; new SharedWorker('/js/rawdeflate.js');
+if (deflater) {
+deflater.port.addEventListener('message', done_deflating, false);
+deflater.port.start();
+} else if (window.Worker) {
+deflater = new Worker('/js/rawdeflate.js');
+deflater.onmessage = done_deflating;
+}
+function done_deflating(e) {
+const img = document.getElementById("plantuml-eg");
+img.src = "https://www.plantuml.com/plantuml/svg/"+encode64(e.data);
+}
+function compress(s) {
+s = unescape(encodeURIComponent(s));
+if (deflater) {
+if (deflater.port &amp;&amp; deflater.port.postMessage) {
+deflater.port.postMessage(s);
+} else {
+deflater.postMessage(s);
+}
+} else {
+setTimeout(function() {
+done_deflating({ data: deflate(s) });
+}, 100);
+}
+}
+compress("\nAlice -\u003e Bob: test\n")
+&lt;/script></description></item></channel></rss>
